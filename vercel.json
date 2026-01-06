@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "buildCommand": "composer install --no-dev --optimize-autoloader",
+  "buildCommand": "php -r \"copy('https://getcomposer.org/installer', 'composer-setup.php');\" && php composer-setup.php && php composer.phar install --no-dev --optimize-autoloader",
+  "installCommand": "php -r \"copy('https://getcomposer.org/installer', 'composer-setup.php');\" && php composer-setup.php && php composer.phar install",
   "outputDirectory": "public",
-  "installCommand": "composer install",
   "framework": null,
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/public/index.php"
+      "dest": "/api/index.php"
     }
   ]
 }
